@@ -47,10 +47,11 @@ func main() {
 
 ```
 # Benchmarks
-* lzsgo: translated by c2go, and optimized, the pressure test effect is good, the fluctuation is large in the actual environment
-* lzsc: In the actual environment, it is very stable and fast
-
+* lzsgo: translated by c2go, and optimized, the pressure test effect is good, the fluctuation is large in the test environment
+* lzsc: In the test environment, it is very stable and fast
 <img width="858" alt="image" src="https://user-images.githubusercontent.com/3632406/205533834-765b6cfc-7150-47d5-b305-ab63180d6f61.png">
+<img width="571" alt="image" src="https://user-images.githubusercontent.com/3632406/205534810-001dabe6-af85-4de1-bd7e-0d8b11f2e38f.png">
+
 
 
 # Thanks
