@@ -46,6 +46,12 @@ func main() {
 }
 
 ```
+# Benchmarks
+* lzsgo: translated by c2go, and optimized, the pressure test effect is good, the fluctuation is large in the actual environment
+* lzsc: In the actual environment, it is very stable and fast
+
+<img width="858" alt="image" src="https://user-images.githubusercontent.com/3632406/205533834-765b6cfc-7150-47d5-b305-ab63180d6f61.png">
+
 
 # Thanks
-[ocserv](https://gitlab.com/openconnect/ocserv)
+[OpenConnect](https://gitlab.com/openconnect/)
