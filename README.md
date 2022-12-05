@@ -38,7 +38,7 @@ func main() {
 	}
   
 	if !bytes.Equal(src, unprBuf[:ret]) {
-		fmt.Printf("Uncompress failed: %d", ret)
+		fmt.Printf("Compress and uncompress data not equal")
 		return
 	}
   
