@@ -1,5 +1,5 @@
 # lzsc
-lzsc comes from the OpenConnect's LZS library. 
+lzsc （Golang LZS Compression） comes from the OpenConnect's LZS library. 
 
 Using CGO, which makes it easier for you to call in Golang, and it is very fast.
 
