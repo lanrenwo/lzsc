@@ -1,0 +1,2 @@
+# lzsc
+lzs for cgo
