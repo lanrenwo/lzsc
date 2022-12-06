@@ -12,20 +12,22 @@ const (
 )
 
 func TestLZS(t *testing.T) {
+	var n int
+	var err error
 	for i := 1; i < MaxMTU; i++ {
 		pkgBuf := randBytes(i)
 		comprBuf := make([]byte, PkgSize)
-		ret := Compress(pkgBuf, comprBuf)
-		if ret <= 0 {
-			t.Errorf("Compress failed: %d %d", ret, i)
+		n, err = Compress(pkgBuf, comprBuf)
+		if err != nil {
+			t.Errorf("Compress failed: %d %s", i, err.Error())
 		}
 		unprBuf := make([]byte, i)
-		ret = Uncompress(comprBuf[:ret], unprBuf)
-		if ret <= 0 {
-			t.Errorf("Uncompress failed: %d %d", ret, i)
+		n, err = Uncompress(comprBuf[:n], unprBuf)
+		if err != nil {
+			t.Errorf("Uncompress failed: %d %s", i, err.Error())
 		}
-		if !bytes.Equal(pkgBuf[:i], unprBuf[:ret]) {
-			t.Errorf("Uncompress failed: %d %d", i, ret)
+		if !bytes.Equal(pkgBuf[:i], unprBuf[:n]) {
+			t.Errorf("Compress and uncompress data not equal")
 		}
 	}
 }
