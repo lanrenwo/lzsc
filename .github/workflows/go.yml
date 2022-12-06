@@ -26,3 +26,12 @@ jobs:
 
     - name: Test
       run: go test -v ./...
+      
+    - name: Test coverage
+      run: |
+         cd server
+         go test -race -coverprofile=coverage.txt -covermode=atomic -v ./...
+    - name: Upload coverage to Codecov
+      run: |
+         cd server
+         bash <(curl -s https://codecov.io/bash)      
