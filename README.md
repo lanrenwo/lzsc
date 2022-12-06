@@ -23,31 +23,34 @@ import (
 )
 
 func main() {
+	var (
+		n   int
+		err error
+	)
 	s := "hello world"
 	src := []byte(strings.Repeat(s, 50))
 
 	comprBuf := make([]byte, 2048)
-	ret := lzsc.Compress(src, comprBuf)
-	if ret <= 0 {
-		fmt.Printf("Compress failed: %d", ret)
+	n, err = lzsc.Compress(src, comprBuf)
+	if err != nil {
+		fmt.Printf("Compress failed: %s", err)
 		return
 	}
-  
+
 	unprBuf := make([]byte, 2048)
-	ret = lzsc.Uncompress(comprBuf[:ret], unprBuf)
-	if ret <= 0 {
-		fmt.Printf("Uncompress failed: %d", ret)
+	n, err = lzsc.Uncompress(comprBuf[:n], unprBuf)
+	if err != nil {
+		fmt.Printf("Uncompress failed: %s", err)
 		return
 	}
-  
-	if !bytes.Equal(src, unprBuf[:ret]) {
+
+	if !bytes.Equal(src, unprBuf[:n]) {
 		fmt.Printf("Compress and uncompress data not equal")
 		return
 	}
-  
+
 	fmt.Println("ok")
 }
-
 ```
 # Benchmarks
 * lzsgo: translated by c2go, and optimized, the pressure test effect is good, the fluctuation is large in the test environment
