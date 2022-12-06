@@ -1,4 +1,7 @@
 # lzsc
+[![Go](https://github.com/lanrenwo/lzsc/workflows/Go/badge.svg)](https://github.com/lanrenwo/lzsc/actions)
+[![codecov](https://codecov.io/gh/lanrenwo/lzsc/branch/main/graph/badge.svg)](https://codecov.io/gh/lanrenwo/lzsc)
+
 lzsc (Golang LZS Compression) comes from the OpenConnect's LZS library. 
 
 Using CGO, which makes it easier for you to call in Golang, and it is very fast.
